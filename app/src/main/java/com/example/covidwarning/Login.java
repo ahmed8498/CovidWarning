@@ -20,6 +20,7 @@ public class Login extends AppCompatActivity implements LoginCallback {
 
     private EditText emailEditText;
     private EditText passwordEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class Login extends AppCompatActivity implements LoginCallback {
     {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(passwordEditText.getWindowToken(), 0);
+
         if(emailEditText.getText().toString().isEmpty())
         {
             emailEditText.setError("Please enter your email");
@@ -62,9 +64,9 @@ public class Login extends AppCompatActivity implements LoginCallback {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString("LoggedInUser",email);
             editor.commit();
+
             if(email.toLowerCase().contains("security")){
                 String[] options = {"Add New Fine","View Social Distancing Violations","View Fines"};
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("What do you want to do?");
                 builder.setItems(options, new DialogInterface.OnClickListener() {

@@ -24,10 +24,11 @@ public class StudentViewFines extends AppCompatActivity implements GetFinesCallb
         setContentView(R.layout.activity_student_view_fines);
         recyclerView = findViewById(R.id.studentViewFinesRecyclerView);
         FirebaseNetworking firebaseNetworking = new FirebaseNetworking();
+
         SharedPreferences prefs = getSharedPreferences("Login",MODE_PRIVATE);
         String email = prefs.getString("LoggedInUser", "");
 
-        firebaseNetworking.getSocialDistancingViolationOfStudent(email.substring(4,9),this);
+        firebaseNetworking.getFinesOfStudent(email.substring(4,9),this);
 
     }
 

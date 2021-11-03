@@ -62,7 +62,7 @@ public class FirebaseNetworking {
 
         uploadImages(user);
     }
-    public void uploadImages(final User user)
+    private void uploadImages(final User user)
     {
         mStorageRef = FirebaseStorage.getInstance().getReference();
         if(imagesList.size() > 0)
@@ -258,12 +258,12 @@ public class FirebaseNetworking {
     }
 
 
-    public void getSocialDistancingViolationOfStudent(String studentID, GetFinesCallback callback){
+    public void getFinesOfStudent(String studentID, GetFinesCallback callback){
         this.getFinesCallback = callback;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("fines")
                 .whereEqualTo("studentID",studentID)
-                .whereEqualTo("fineType","Not maintaining social distance")
+                .whereNotEqualTo("fineType","Not maintaining social distance")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

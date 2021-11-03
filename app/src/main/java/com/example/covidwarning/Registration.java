@@ -46,6 +46,7 @@ public class Registration extends AppCompatActivity implements RegisterUserCallb
     Uri selectedVideoUri;
 
     private ArrayList<Bitmap> imagesList;
+
      final static int  GALLERY_REQUEST = 1;
      final static int VIDEO_REQUEST = 2;
 
@@ -153,10 +154,7 @@ public class Registration extends AppCompatActivity implements RegisterUserCallb
                 if(data.getClipData() != null) {
 
                     int count = data.getClipData().getItemCount();
-                    if (count < 5) {
-                        photosSelectionTextView.setText("Please select 5 photos");
-                        photosSelectionTextView.setTextColor(Color.RED);
-                    } else {
+
                         for (int i = 0; i < count; i++) {
                             Uri selectedImage = data.getClipData().getItemAt(i).getUri();
                             try {
@@ -173,7 +171,7 @@ public class Registration extends AppCompatActivity implements RegisterUserCallb
 
                             }
                         }
-                    }
+
                 }
                 else if(data.getData() != null)
                 {
@@ -198,8 +196,6 @@ public class Registration extends AppCompatActivity implements RegisterUserCallb
 
 
                         selectedVideoUri = data.getData();
-//                        FirebaseNetworking firebaseNetworking = new FirebaseNetworking();
-//                        firebaseNetworking.uploadVideo(selectedVideoUri,newUser);
                         }
 
 
@@ -233,6 +229,7 @@ public class Registration extends AppCompatActivity implements RegisterUserCallb
             }
             else
             {
+                progressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(getApplicationContext(),"Account creation Failed!",Toast.LENGTH_LONG).show();
             }
     }

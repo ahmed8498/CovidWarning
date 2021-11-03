@@ -74,6 +74,8 @@ public class AddFine extends AppCompatActivity implements AddingFineCallback {
                 }
 
             };
+
+
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(AddFine.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
@@ -96,6 +98,7 @@ public class AddFine extends AppCompatActivity implements AddingFineCallback {
                 Calendar currentTimeCalendar = Calendar.getInstance();
                 int hour = currentTimeCalendar.get(Calendar.HOUR_OF_DAY);
                 int minute = currentTimeCalendar.get(Calendar.MINUTE);
+
 
                 TimePickerDialog timePickerDialog = new TimePickerDialog(AddFine.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -162,10 +165,8 @@ public class AddFine extends AppCompatActivity implements AddingFineCallback {
                 {
                     fineAmountEditText.setText("AED 150");
                 }
-                else if (fineTypes[i].equals("High body temperature"))
-                {
+                else if (fineTypes[i].equals("High body temperature")) {
                     fineAmountEditText.setText("0 - PCR required");
-
                 }
             }
 
@@ -207,6 +208,7 @@ public class AddFine extends AppCompatActivity implements AddingFineCallback {
     public void onCallback(Boolean isSuccessful, Exception e) {
         if(isSuccessful){
             Toast.makeText(getApplicationContext(),"Fine added successfully",Toast.LENGTH_LONG).show();
+
         }
         else{
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();

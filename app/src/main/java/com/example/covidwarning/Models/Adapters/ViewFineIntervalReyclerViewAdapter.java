@@ -37,7 +37,9 @@ public class ViewFineIntervalReyclerViewAdapter  extends RecyclerView.Adapter<Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             int count = intervalsCount[position];
-            holder.fineCountLabel.setText("Number of fines: " + String.valueOf(count));
+
+            holder.fineCountLabel.setText("Number of violations: " + String.valueOf(count));
+
             if(position == 0){
                 holder.fineIntervalLabel.setText("Violatiom time: 8:00 - 9:00");
             }
@@ -68,10 +70,10 @@ public class ViewFineIntervalReyclerViewAdapter  extends RecyclerView.Adapter<Vi
                 holder.fineIntervalLabel.setText("Violatiom time: 17:00 - 00:00");
             }
 
-            int totalCount = 0;
-            for(int i = 0 ; i < intervalsCount.length;i++){
-                totalCount += intervalsCount[i];
-            }
+//            int totalCount = 0;
+//            for(int i = 0 ; i < intervalsCount.length;i++){
+//                totalCount += intervalsCount[i];
+//            }
 
 
     }

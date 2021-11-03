@@ -48,6 +48,7 @@ public class SecurityViewSocialDistancing extends AppCompatActivity implements G
         recyclerView = (RecyclerView) findViewById(R.id.securityFineRecyclerView);
         totalCountLabel = (TextView) findViewById(R.id.totalFinesCountLabel);
         setupDateEditText();
+
         for(int i = 0 ; i < fineIntervalCount.length;i++)
             fineIntervalCount[0] = 0;
     }
@@ -175,7 +176,8 @@ public class SecurityViewSocialDistancing extends AppCompatActivity implements G
                }
             }
 
-            totalCountLabel.setText("Total number of Violatiom: " + fines.size());
+            totalCountLabel.setText("Total number of Violations: " + fines.size());
+
             ViewFineIntervalReyclerViewAdapter adapter = new ViewFineIntervalReyclerViewAdapter(fineIntervalCount);
             recyclerView.setAdapter(adapter);
             recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
@@ -184,7 +186,7 @@ public class SecurityViewSocialDistancing extends AppCompatActivity implements G
 
         }
         else{
-            Toast.makeText(getApplicationContext(),"No Violatiom found", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"No Violations found", Toast.LENGTH_LONG).show();
         };
 
 
