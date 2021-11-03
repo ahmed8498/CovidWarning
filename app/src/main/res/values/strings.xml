@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CovidWarning</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="createAccount">Create an Account</string>
+    <string name="selectPhotos">Select 5 Photos</string>
+    <string name="AddFine">Add Fine</string>
+    <string name="ViewMyFines">View My Fines</string>
+    <string name="ViewFines">View Fines</string>
+    <string name="ViewSocialDistancing">Social Distancing Violations</string>
+
+
+    <string-array name="locationsArray">
+        <item>ESB</item>
+
+
+    </string-array>
+    <string-array name="fineTypeArray">
+        <item>Not wearing a mask</item>
+        <item>Not maintaining social distance</item>
+        <item>High body temperature</item>
+    </string-array>
+
+    <string-array name="fineType2Array">
+        <item>Not wearing a mask</item>
+        <item>High body temperature</item>
+        <item>All</item>
+    </string-array>
+</resources>

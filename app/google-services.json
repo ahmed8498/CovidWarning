@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "513682114135",
+    "project_id": "covidwarning-b16e8",
+    "storage_bucket": "covidwarning-b16e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513682114135:android:f6e20774c155f45637c512",
+        "android_client_info": {
+          "package_name": "com.example.covidwarning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513682114135-jufp7vuuhrpt7lp9cs9pbcl2da83nkn3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9yDsZmr0SgI1c5vU9MWOEgkkqpfzNv08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513682114135-jufp7vuuhrpt7lp9cs9pbcl2da83nkn3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
